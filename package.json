@@ -58,6 +58,7 @@
     "why-is-node-running": "^2.1.2"
   },
   "files": [
+    "tsconfig.json",
     "src/*",
     "lib/src/*"
   ]
