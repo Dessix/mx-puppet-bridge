@@ -30,7 +30,7 @@
     "file-type": "^12.4.2",
     "got": "^11.6.0",
     "hasha": "^5.2.0",
-    "js-yaml": "^3.13.1",
+    "js-yaml": "^4.0.0",
     "markdown-it": "^9.1.0",
     "pg-promise": "^10.5.0",
     "prom-client": "^13.0.0",
@@ -42,6 +42,7 @@
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "@types/chai": "^4.2.11",
+    "@types/js-yaml": "^4.0.0",
     "@types/mocha": "^5.2.7",
     "@types/node": "^12.12.30",
     "@types/sqlite3": "^3.1.6",

@@ -188,7 +188,7 @@ export class PuppetBridge extends EventEmitter {
 	public readConfig(addAppservice: boolean = true) {
 		try {
 			this.config = new Config();
-			this.config.applyConfig(yaml.safeLoad(fs.readFileSync(this.configPath, "utf8")));
+			this.config.applyConfig(yaml.load(fs.readFileSync(this.configPath, "utf8")) as {});
 			Log.Configure(this.config.logging);
 			// apply name patterns
 			this.protocol.namePatterns.user = this.config.namePatterns.user || this.protocol.namePatterns.user || ":name";
@@ -205,7 +205,7 @@ export class PuppetBridge extends EventEmitter {
 		if (addAppservice) {
 			let registration: IAppserviceRegistration | null = null;
 			try {
-				registration = yaml.safeLoad(fs.readFileSync(this.registrationPath, "utf8")) as IAppserviceRegistration;
+				registration = yaml.load(fs.readFileSync(this.registrationPath, "utf8")) as IAppserviceRegistration;
 			} catch (err) {
 				log.error("Failed to load registration file", err);
 				process.exit(-1);
@@ -332,7 +332,7 @@ export class PuppetBridge extends EventEmitter {
 			"url": opts.url,
 			"de.sorunome.msc2409.push_ephemeral": true,
 		};
-		fs.writeFileSync(this.registrationPath, yaml.safeDump(reg));
+		fs.writeFileSync(this.registrationPath, yaml.dump(reg));
 	}
 
 	get AS(): Appservice {
