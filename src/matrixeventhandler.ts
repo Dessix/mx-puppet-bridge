@@ -446,10 +446,7 @@ export class MatrixEventHandler {
 			"m.audio": "audio",
 			"m.video": "video",
 			"m.sticker": "sticker",
-		}[msgtype];
-		if (!data.type) {
-			data.type = "file";
-		}
+		}[msgtype] ?? "file";
 		return data;
 	}
 

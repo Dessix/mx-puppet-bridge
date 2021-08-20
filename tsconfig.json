@@ -9,7 +9,6 @@
         "types": ["mocha", "node"],
         "strictNullChecks": true,
         "allowSyntheticDefaultImports": true,
-        "incremental": true,
         "sourceMap": true,
         "allowJs": false
     },

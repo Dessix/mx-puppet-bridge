@@ -412,10 +412,7 @@ export class RemoteEventHandler {
 					audio: "m.audio",
 					image: "m.image",
 					video: "m.video",
-				}[type];
-				if (!msgtype) {
-					msgtype = "m.file";
-				}
+				}[type] ?? "m.file";
 			} else {
 				msgtype = "m.file";
 			}

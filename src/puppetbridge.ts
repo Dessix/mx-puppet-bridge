@@ -413,7 +413,7 @@ export class PuppetBridge extends EventEmitter {
 				}
 			} catch (err) {
 				if (err.code === "ECONNREFUSED") {
-					return new Promise((resolve, reject) => {
+					return new Promise<void>((resolve, reject) => {
 						const TIMEOUT_RETRY = 10000;
 						setTimeout(async () => {
 							try {
