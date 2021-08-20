@@ -29,7 +29,7 @@ export interface ISqlRow {
 export interface IDatabaseConnector {
 	type: string;
 	latency: prometheus.Histogram<string>;
-	Open(): void;
+	Open(): Promise<void>;
 	Get(sql: string, parameters?: ISqlCommandParameters): Promise<ISqlRow|null>;
 	All(sql: string, parameters?: ISqlCommandParameters): Promise<ISqlRow[]>;
 	Run(sql: string, parameters?: ISqlCommandParameters, returnId?: string): Promise<number>;

@@ -36,7 +36,7 @@ export class SQLite3 implements IDatabaseConnector {
 		});
 	}
 
-	public async Open() {
+	public async Open(): Promise<void> {
 		log.info(`Opening ${this.filename}`);
 		this.db = new Database(this.filename);
 	}
