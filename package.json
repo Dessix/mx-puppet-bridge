@@ -11,7 +11,7 @@
   },
   "main": "./lib/src/index.js",
   "scripts": {
-    "prepublishOnly": "npm run build",
+    "prepare": "npm run build",
     "lint": "tslint --project ./tsconfig.json -t stylish",
     "build": "tsc",
     "test": "npm run-script build && mocha",
